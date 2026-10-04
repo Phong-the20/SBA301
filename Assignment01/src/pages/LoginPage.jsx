@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useTheme } from "../context/ThemeContext";
@@ -52,70 +52,62 @@ export const LoginPage = () => {
     }
   };
 
-  // Quick fill helper for presentation/evaluation
-  const fillCredentials = (u, p) => {
-    setUsername(u);
-    setPassword(p);
-    setError("");
-    setFieldErrors({});
-  };
-
   return (
-    <div className="min-vh-100 d-flex flex-column justify-content-center align-items-center p-3 login-background">
+    <div className="min-vh-100 d-flex flex-column justify-content-center align-items-center p-3 p-md-4 login-background">
       {/* Top right theme toggle */}
-      <div className="position-absolute top-0 end-0 p-3">
+      <div className="position-absolute top-0 end-0 p-3 p-md-4">
         <button
           type="button"
-          className="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center shadow-sm"
-          style={{ width: "38px", height: "38px" }}
+          className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+          style={{ width: "46px", height: "46px" }}
           onClick={toggleTheme}
           title="Đổi giao diện sáng/tối"
         >
-          <i className={`bi ${theme === "light" ? "bi-moon-stars-fill text-warning" : "bi-sun-fill text-warning"}`}></i>
+          <i className={`bi ${theme === "light" ? "bi-moon-stars-fill text-warning fs-5" : "bi-sun-fill text-warning fs-5"}`}></i>
         </button>
       </div>
 
-      <div className="login-card-container w-100" style={{ maxWidth: "440px" }}>
+      <div className="login-card-container w-100" style={{ maxWidth: "540px" }}>
         <div className="card border-0 shadow-lg rounded-4 overflow-hidden bg-body">
           {/* Brand Header */}
           <div className="p-4 pt-5 text-center bg-primary-subtle border-bottom">
-            <div className="d-inline-block shadow rounded-4 overflow-hidden mb-3">
+            <div className="d-inline-block shadow-sm rounded-4 overflow-hidden mb-3">
               <img
                 src="/assets/logo.jpg"
                 alt="FUNews AI Logo"
-                style={{ width: "72px", height: "72px", objectFit: "cover" }}
+                style={{ width: "92px", height: "92px", objectFit: "cover" }}
               />
             </div>
-            <h4 className="fw-bold text-gradient mb-1">FUNewsManagementSystem</h4>
-            <p className="text-secondary small mb-0">
+            <h3 className="fw-bold text-gradient mb-2 fs-3">FUNewsManagementSystem</h3>
+            <p className="text-secondary mb-0 fs-6">
               Cổng thông tin quản trị tin tức FPT University
             </p>
           </div>
 
           <div className="card-body p-4 p-md-5">
             <div className="mb-4 text-center">
-              <h5 className="fw-bold text-body mb-1">Đăng Nhập Quản Trị</h5>
-              <p className="text-secondary small">
+              <h4 className="fw-bold text-body mb-2">Đăng Nhập Quản Trị</h4>
+              <p className="text-secondary fs-6 mb-0">
                 Vui lòng nhập tài khoản được cấp quyền để tiếp tục
               </p>
             </div>
 
             {error && (
               <div className="alert alert-danger d-flex align-items-center rounded-3 p-3 mb-4 shadow-sm" role="alert">
-                <i className="bi bi-exclamation-triangle-fill fs-5 me-2 flex-shrink-0"></i>
-                <div className="small fw-semibold">{error}</div>
+                <i className="bi bi-exclamation-triangle-fill fs-4 me-3 flex-shrink-0"></i>
+                <div className="fw-semibold">{error}</div>
               </div>
             )}
 
             <form onSubmit={handleSubmit} noValidate>
               {/* Username Input */}
-              <div className="mb-3">
-                <label className="form-label fw-semibold small text-secondary">
+              <div className="mb-4">
+                <label className="form-label fw-semibold text-secondary fs-6 mb-2">
                   Tên đăng nhập (Username)
                 </label>
-                <div className="input-group">
-                  <span className="input-group-text bg-body-tertiary">
-                    <i className="bi bi-person"></i>
+                <div className="input-group input-group-lg">
+                  <span className="input-group-text bg-body-tertiary px-3">
+                    <i className="bi bi-person fs-5"></i>
                   </span>
                   <input
                     type="text"
@@ -137,12 +129,12 @@ export const LoginPage = () => {
 
               {/* Password Input */}
               <div className="mb-4">
-                <label className="form-label fw-semibold small text-secondary">
+                <label className="form-label fw-semibold text-secondary fs-6 mb-2">
                   Mật khẩu
                 </label>
-                <div className="input-group">
-                  <span className="input-group-text bg-body-tertiary">
-                    <i className="bi bi-lock"></i>
+                <div className="input-group input-group-lg">
+                  <span className="input-group-text bg-body-tertiary px-3">
+                    <i className="bi bi-lock fs-5"></i>
                   </span>
                   <input
                     type={showPassword ? "text" : "password"}
@@ -157,11 +149,11 @@ export const LoginPage = () => {
                   />
                   <button
                     type="button"
-                    className="btn btn-outline-secondary"
+                    className="btn btn-outline-secondary px-3"
                     onClick={() => setShowPassword(!showPassword)}
                     tabIndex="-1"
                   >
-                    <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
+                    <i className={`bi ${showPassword ? "bi-eye-slash fs-5" : "bi-eye fs-5"}`}></i>
                   </button>
                   {fieldErrors.password && (
                     <div className="invalid-feedback">{fieldErrors.password}</div>
@@ -173,48 +165,16 @@ export const LoginPage = () => {
               <button
                 type="submit"
                 id="btnLoginSubmit"
-                className="btn btn-primary w-100 py-2 rounded-3 fw-bold shadow-sm mb-4 transition-all"
+                className="btn btn-primary btn-lg w-100 py-3 rounded-3 fw-bold shadow-sm mt-2 transition-all fs-6"
               >
-                <i className="bi bi-box-arrow-in-right me-2"></i>
+                <i className="bi bi-box-arrow-in-right me-2 fs-5"></i>
                 Đăng Nhập Vào Hệ Thống
               </button>
             </form>
-
-            {/* Test Credentials Quick Box (Requirement R02 & R03 Demonstration) */}
-            <div className="p-3 bg-body-tertiary rounded-3 border">
-              <div className="d-flex align-items-center justify-content-between mb-2">
-                <span className="text-secondary small fw-bold text-uppercase" style={{ fontSize: "0.7rem" }}>
-                  <i className="bi bi-key-fill text-warning me-1"></i> Tài khoản Test (Bấm để điền):
-                </span>
-              </div>
-              <div className="d-flex flex-column gap-2">
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline-primary d-flex align-items-center justify-content-between text-start rounded-2 py-1 px-2"
-                  onClick={() => fillCredentials("Admin", "Admin")}
-                >
-                  <span className="small">
-                    <strong>Admin</strong> (Quyền Quản trị viên)
-                  </span>
-                  <span className="badge bg-primary text-white">Admin / Admin</span>
-                </button>
-
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline-success d-flex align-items-center justify-content-between text-start rounded-2 py-1 px-2"
-                  onClick={() => fillCredentials("staff", "staff123")}
-                >
-                  <span className="small">
-                    <strong>Staff</strong> (Quyền Nhân viên)
-                  </span>
-                  <span className="badge bg-success text-white">staff / staff123</span>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className="text-center mt-3 text-secondary small">
+        <div className="text-center mt-4 text-secondary">
           SBA301 • Integrate Single Page Application with Spring Boot • Lab Assignment 01
         </div>
       </div>
