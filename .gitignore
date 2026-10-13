@@ -32,3 +32,6 @@ yarn-error.log*
 
 # Local duplicated folder
 SBA301-Lab05/
+
+# Course Documents (Do not upload to github)
+Document/
