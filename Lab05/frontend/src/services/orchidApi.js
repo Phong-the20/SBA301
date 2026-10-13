@@ -1,12 +1,12 @@
 import axios from "axios";
 
-// Step 8.1 & 8.2 - Cấu hình Axios Client
+
 const getBaseUrl = () => {
   const envUrl = import.meta.env.VITE_API_URL;
   if (envUrl && !envUrl.includes("localhost")) {
     return envUrl;
   }
-  // Tự động dùng đúng hostname đang truy cập (localhost, 127.0.0.1, hoặc IP mạng LAN)
+
   const host = typeof window !== "undefined" && window.location.hostname ? window.location.hostname : "localhost";
   return `http://${host}:8080/orchids`;
 };
