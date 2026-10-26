@@ -23,9 +23,27 @@ public class Main {
         IStudentService service = new StudentService(studentRepo, bookRepo);
 
         System.out.println("=== Slot 29: Student - Book Many-to-Many Layering ===");
-        Student s = service.createStudent(new Student("s29@fu.edu.vn", "Slot", "TwentyNine", 8.0));
-        Book b1 = bookRepo.save(new Book("978-001", "Hibernate Basics", "FPT"));
-        Book b2 = bookRepo.save(new Book("978-002", "ORM Design", "FPT"));
+        
+        String email = "s29@fu.edu.vn";
+        Student s = studentRepo.findByEmail(email).orElseGet(() ->
+            service.createStudent(new Student(email, "Slot", "TwentyNine", 8.0))
+        );
+
+        Book b1 = bookRepo.findByIsbn("978-001").orElseGet(() ->
+            bookRepo.save(new Book("978-001", "Hibernate Basics", "FPT"))
+        );
+        Book b2 = bookRepo.findByIsbn("978-002").orElseGet(() ->
+            bookRepo.save(new Book("978-002", "ORM Design", "FPT"))
+        );
+
+        // Ensure clean state before borrowing
+        Student current = service.getStudent(s.getId());
+        if (current.getBooks().stream().anyMatch(b -> b.getId().equals(b1.getId()))) {
+            service.returnBook(s.getId(), b1.getId());
+        }
+        if (current.getBooks().stream().anyMatch(b -> b.getId().equals(b2.getId()))) {
+            service.returnBook(s.getId(), b2.getId());
+        }
 
         service.borrowBook(s.getId(), b1.getId());
         service.borrowBook(s.getId(), b2.getId());
@@ -36,6 +54,7 @@ public class Main {
         service.returnBook(s.getId(), b1.getId());
         System.out.println("Returned book 1, remaining books: " + service.getStudent(s.getId()).getBooks().size());
 
+        System.out.println("=== Finished Slot 29 Main Demo Successfully! ===");
         HibernateUtil.shutdown();
     }
 }
