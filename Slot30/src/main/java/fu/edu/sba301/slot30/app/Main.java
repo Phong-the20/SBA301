@@ -17,16 +17,20 @@ public class Main {
         IStudentService service = new StudentService(repo);
 
         System.out.println("=== Slot 30: Hibernate CRUD Application with Layered Architecture ===");
-        Student created = service.create(
-                new Student("slot30@fu.edu.vn", "Slot", "Thirty", 8.5)
+        
+        String email = "slot30@fu.edu.vn";
+        Student student = repo.findByEmail(email).orElseGet(() ->
+                service.create(new Student(email, "Slot", "Thirty", 8.5))
         );
-        System.out.println("Created: " + created);
+        System.out.println("Student record: " + student);
 
-        Student found = service.getById(created.getId());
+        Student found = service.getById(student.getId());
         System.out.println("Found by ID: " + found);
 
+        System.out.println("All students in database:");
         service.getAll().forEach(System.out::println);
 
+        System.out.println("=== Finished Slot 30 Main Demo Successfully! ===");
         HibernateUtil.shutdown();
     }
 }
