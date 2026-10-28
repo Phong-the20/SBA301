@@ -5,3 +5,4 @@ public class AppLauncher {
         StudentApplication.main(args);
     }
 }
+

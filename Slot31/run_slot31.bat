@@ -6,3 +6,4 @@ echo ========================================================
 cd /d %~dp0
 call mvnw.cmd compile exec:java
 pause
+
