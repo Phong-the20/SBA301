@@ -1,3 +1,4 @@
 @echo off
-set "MAVEN_PROJECTBASEDIR=%~dp0"
-java -classpath "%MAVEN_PROJECTBASEDIR%.mvn\wrapper\maven-wrapper.jar" "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" org.apache.maven.wrapper.MavenWrapperMain %*
+set "BASE=%~dp0"
+if "%BASE:~-1%"=="\" set "BASE=%BASE:~0,-1%"
+java -classpath "%BASE%\.mvn\wrapper\maven-wrapper.jar" "-Dmaven.multiModuleProjectDirectory=%BASE%" org.apache.maven.wrapper.MavenWrapperMain %*
