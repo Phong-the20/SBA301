@@ -35,3 +35,7 @@ SBA301-Lab05/
 
 # Course Documents (Do not upload to github)
 Document/
+
+# Local submission packages
+*.zip
+PhongTT_*
