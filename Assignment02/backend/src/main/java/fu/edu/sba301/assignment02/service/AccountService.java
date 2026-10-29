@@ -118,7 +118,7 @@ public class AccountService implements IAccountService {
             return getAllAccounts();
         }
         String cleanKeyword = keyword.trim();
-        return accountRepository.findByAccountNameContainingIgnoreCaseOrAccountEmailContainingIgnoreCase(cleanKeyword, cleanKeyword)
+        return accountRepository.searchByNameOrEmail(cleanKeyword)
             .stream()
             .map(this::toDto)
             .collect(Collectors.toList());

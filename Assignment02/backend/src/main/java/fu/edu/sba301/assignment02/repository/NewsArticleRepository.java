@@ -23,7 +23,10 @@ public interface NewsArticleRepository extends JpaRepository<NewsArticle, Intege
     List<NewsArticle> findByNewsTitleContainingIgnoreCaseOrHeadlineContainingIgnoreCase(String title, String headline);
     List<NewsArticle> findByNewsStatusAndNewsTitleContainingIgnoreCase(Integer status, String title);
 
-    @Query("SELECT n FROM NewsArticle n WHERE n.newsStatus = :status AND (LOWER(n.newsTitle) LIKE LOWER(CONCAT('%', :kw, '%')) OR LOWER(n.headline) LIKE LOWER(CONCAT('%', :kw, '%')))")
+    @Query(value = "SELECT * FROM news_article WHERE news_status = :status AND (news_title COLLATE SQL_Latin1_General_CP1_CI_AI LIKE CONCAT('%', :kw, '%') OR headline COLLATE SQL_Latin1_General_CP1_CI_AI LIKE CONCAT('%', :kw, '%'))", nativeQuery = true)
     List<NewsArticle> searchByStatusAndKeyword(@Param("status") Integer status, @Param("kw") String keyword);
+
+    @Query(value = "SELECT * FROM news_article WHERE news_title COLLATE SQL_Latin1_General_CP1_CI_AI LIKE CONCAT('%', :kw, '%') OR headline COLLATE SQL_Latin1_General_CP1_CI_AI LIKE CONCAT('%', :kw, '%')", nativeQuery = true)
+    List<NewsArticle> searchAllByKeyword(@Param("kw") String keyword);
 }
 

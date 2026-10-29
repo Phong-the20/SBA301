@@ -115,7 +115,7 @@ public class CategoryService implements ICategoryService {
         if (keyword == null || keyword.trim().isEmpty()) {
             return getAllCategories();
         }
-        return categoryRepository.findByCategoryNameContainingIgnoreCase(keyword.trim()).stream()
+        return categoryRepository.searchByCategoryName(keyword.trim()).stream()
             .map(this::toDto)
             .collect(Collectors.toList());
     }

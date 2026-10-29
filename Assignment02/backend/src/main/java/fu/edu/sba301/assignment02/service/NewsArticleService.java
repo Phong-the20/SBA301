@@ -180,7 +180,7 @@ public class NewsArticleService implements INewsArticleService {
         if (activeOnly) {
             list = newsRepository.searchByStatusAndKeyword(1, clean);
         } else {
-            list = newsRepository.findByNewsTitleContainingIgnoreCaseOrHeadlineContainingIgnoreCase(clean, clean);
+            list = newsRepository.searchAllByKeyword(clean);
         }
         return list.stream().map(this::toResponse).collect(Collectors.toList());
     }

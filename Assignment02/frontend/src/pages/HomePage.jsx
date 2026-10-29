@@ -9,6 +9,17 @@ import { newsApi } from '../api/newsApi';
 import { categoryApi } from '../api/categoryApi';
 import { Modal } from '../components/Modal';
 
+// Helper to strip Vietnamese accents for accent-insensitive search
+const removeVietnameseTones = (str) => {
+  if (!str) return '';
+  return str
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'd')
+    .toLowerCase();
+};
+
 export const HomePage = () => {
   const [newsList, setNewsList] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -41,10 +52,10 @@ export const HomePage = () => {
     .filter((item) => (selectedCategory ? item.categoryId === selectedCategory : true))
     .filter((item) => {
       if (!keyword || !keyword.trim()) return true;
-      const kw = keyword.trim().toLowerCase();
-      const titleMatch = item.newsTitle?.toLowerCase().includes(kw);
-      const headlineMatch = item.headline?.toLowerCase().includes(kw);
-      return titleMatch || headlineMatch;
+      const cleanKw = removeVietnameseTones(keyword.trim());
+      const cleanTitle = removeVietnameseTones(item.newsTitle);
+      const cleanHeadline = removeVietnameseTones(item.headline);
+      return cleanTitle.includes(cleanKw) || cleanHeadline.includes(cleanKw);
     });
 
   return (
