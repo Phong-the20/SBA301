@@ -181,16 +181,4 @@ Assignment01/
 | **2** | "Gợi ý cấu trúc Component Tree và State Ownership Map cho ứng dụng tin tức SPA" | Thiết kế kiến trúc giải pháp đạt điểm tối đa tiêu chí Solution Design (1.5 điểm). | Đề xuất tách `AuthContext`, `storageService`, và phân chia rõ local UI state vs shared state. | Đối chiếu với sơ đồ đề bài trong PDF mục 3.1 & 3.2. | Trực tiếp hiện thực hóa bằng React Router DOM v7, thêm bộ dữ liệu mẫu chi tiết mang bản sắc sinh viên Đại học FPT. |
 | **3** | "Liệt kê các trường hợp kiểm thử biên (Edge Cases) cho bài tập SPA CRUD React" | Chuẩn bị bộ Test Matrix đầy đủ 35 test cases theo mục 5.1 của tài liệu. | Gợi ý các test case: nhập khoảng trắng, tìm kiếm phân biệt hoa thường, xóa bản ghi có quan hệ khóa ngoại. | Tiến hành chạy tay và tự động kiểm thử từng case trên giao diện thực tế. | Tự thiết kế modal cảnh báo chặn xóa chuyên mục khi có bài viết ràng buộc, thêm nút Reset form trong modal. |
 
----
 
-## 🎓 8. BỘ CÂU HỎI VÀ TRẢ LỜI PHỎNG VẤN (INTERVIEW DEFENSE)
-
-### Khung trả lời 5 tầng (5-Layer Explanation Framework):
-1. **Purpose:** Component/file này đảm nhận trách nhiệm gì trong kiến trúc SPA?
-2. **Input:** Nhận những Props, State hoặc Data từ tầng Service/Context nào đi vào?
-3. **Trigger:** Event (onClick, onChange, onSubmit) hoặc Hook (`useEffect`, router) nào kích hoạt?
-4. **Transform:** Logic nào thực hiện validate, lọc (filter), hoặc cập nhật bất biến (immutable update)?
-5. **Output:** State nào thay đổi, React Virtual DOM render lại phần nào trên giao diện?
-
----
-*Chúc các bạn hoàn thành xuất sắc Assignment 01 môn SBA301!*
