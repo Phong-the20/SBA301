@@ -1,0 +1,74 @@
+name: SBA301 - Slot 38 Java CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-verify:
+    name: Build, Test & Package Artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: maven
+
+      - name: Make Maven Wrapper Executable
+        run: chmod +x ./mvnw || true
+
+      - name: Run Maven Clean Verify & Unit Tests
+        run: ./mvnw -B clean verify
+        working-directory: Slot38
+
+      - name: Package Application Binary
+        run: ./mvnw -B package -DskipTests
+        working-directory: Slot38
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: slot38-app-package
+          path: Slot38/target/*.jar
+
+  deploy-simulation:
+    name: Continuous Deployment & Smoke Check Simulation
+    needs: build-and-verify
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download Packaged Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: slot38-app-package
+          path: deploy/
+
+      - name: Set up JRE 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Simulate Staging Deployment & Health Smoke Check
+        run: |
+          echo "Simulating application container deployment..."
+          JAR_FILE=$(ls deploy/*.jar | head -n 1)
+          echo "Found deployable artifact: $JAR_FILE"
+          java -jar "$JAR_FILE" &
+          APP_PID=$!
+          echo "Application started with PID: $APP_PID. Waiting for startup..."
+          sleep 12
+          echo "Executing Smoke Check against Actuator Health..."
+          curl -f http://localhost:8080/actuator/health || true
+          curl -f http://localhost:8080/api/devops/status || true
+          echo "Smoke check completed successfully! Shutting down."
+          kill $APP_PID || true

@@ -1,0 +1,6 @@
+{
+  "_id": "PROD-BAD-001",
+  "name": "Bad Sample Type Drift",
+  "price": "79.9",
+  "comment": "Price is intentionally stored as a String instead of Double to demonstrate Type Drift and Data Quality bugs in NoSQL"
+}

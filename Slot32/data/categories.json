@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "CAT-ACC",
+    "name": "Accessories",
+    "description": "Computer peripherals and desktop accessories",
+    "active": true,
+    "createdAt": "2026-10-28T08:00:00Z"
+  },
+  {
+    "_id": "CAT-DSP",
+    "name": "Displays",
+    "description": "Monitors, projectors and visual display panels",
+    "active": true,
+    "createdAt": "2026-10-28T08:30:00Z"
+  },
+  {
+    "_id": "CAT-NET",
+    "name": "Networking",
+    "description": "Routers, switches and high-speed adapters",
+    "active": true,
+    "createdAt": "2026-10-28T09:00:00Z"
+  }
+]

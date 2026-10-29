@@ -1,0 +1,59 @@
+name: SBA301 Multi-Project CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  verify-slots:
+    name: Verify Slots Build & Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: maven
+
+      - name: Verify Slot 32
+        run: |
+          cd Slot32
+          chmod +x ./mvnw || true
+          ./mvnw -B test
+
+      - name: Verify Slot 33
+        run: |
+          cd Slot33
+          chmod +x ./mvnw || true
+          ./mvnw -B test
+
+      - name: Verify Slot 35
+        run: |
+          cd Slot35
+          chmod +x ./mvnw || true
+          ./mvnw -B test
+
+      - name: Verify Slot 36
+        run: |
+          cd Slot36
+          chmod +x ./mvnw || true
+          ./mvnw -B test
+
+      - name: Verify Slot 37
+        run: |
+          cd Slot37
+          chmod +x ./mvnw || true
+          ./mvnw -B test
+
+      - name: Verify Slot 38
+        run: |
+          cd Slot38
+          chmod +x ./mvnw || true
+          ./mvnw -B test

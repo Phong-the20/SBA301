@@ -1,0 +1,97 @@
+[
+  {
+    "_id": "PROD-001",
+    "name": "Mechanical Keyboard",
+    "price": 79.9,
+    "categoryId": "CAT-ACC",
+    "active": true,
+    "tags": ["mechanical", "rgb", "typing", "gaming"],
+    "specs": {
+      "ports": 1,
+      "hdmi": false,
+      "powerDeliveryW": 0,
+      "switchType": "Cherry MX Red"
+    },
+    "dimensions": {
+      "widthCm": 44.0,
+      "heightCm": 13.5
+    },
+    "createdAt": "2026-10-28T09:15:00Z"
+  },
+  {
+    "_id": "PROD-002",
+    "name": "USB-C Hub Pro",
+    "price": 49.5,
+    "categoryId": "CAT-ACC",
+    "active": true,
+    "tags": ["usb-c", "accessory", "hub", "adapter"],
+    "specs": {
+      "ports": 7,
+      "hdmi": true,
+      "powerDeliveryW": 100,
+      "switchType": null
+    },
+    "dimensions": {
+      "widthCm": 11.2,
+      "heightCm": 4.5
+    },
+    "createdAt": "2026-10-28T09:30:00Z"
+  },
+  {
+    "_id": "PROD-003",
+    "name": "Wireless Ergonomic Mouse",
+    "price": 25.0,
+    "categoryId": "CAT-ACC",
+    "active": true,
+    "warrantyMonths": 12,
+    "tags": ["wireless", "ergonomic", "mouse"],
+    "specs": {
+      "ports": 0,
+      "hdmi": false,
+      "powerDeliveryW": 0,
+      "dpi": 4000
+    },
+    "dimensions": {
+      "widthCm": 12.0,
+      "heightCm": 7.0
+    },
+    "createdAt": "2026-10-28T10:00:00Z"
+  },
+  {
+    "_id": "PROD-004",
+    "name": "UltraWide IPS Monitor 34-Inch",
+    "price": 399.0,
+    "categoryId": "CAT-DSP",
+    "active": true,
+    "tags": ["display", "monitor", "ultrawide", "ips"],
+    "specs": {
+      "ports": 4,
+      "hdmi": true,
+      "powerDeliveryW": 90,
+      "refreshRateHz": 144
+    },
+    "dimensions": {
+      "widthCm": 81.5,
+      "heightCm": 48.0
+    },
+    "createdAt": "2026-10-28T10:15:00Z"
+  },
+  {
+    "_id": "PROD-005",
+    "name": "Precision Mouse Pad XL",
+    "price": 14.9,
+    "categoryId": "CAT-ACC",
+    "active": false,
+    "tags": ["accessory", "pad", "desk-mat"],
+    "specs": {
+      "ports": 0,
+      "hdmi": false,
+      "powerDeliveryW": 0
+    },
+    "dimensions": {
+      "widthCm": 90.0,
+      "heightCm": 40.0
+    },
+    "createdAt": "2026-10-28T10:30:00Z"
+  }
+]
