@@ -29,10 +29,27 @@ public class TagController {
         return ResponseEntity.ok(tagService.getAllTags());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<TagDto> getTagById(@PathVariable Integer id) {
+        return ResponseEntity.ok(tagService.getTagById(id));
+    }
+
     @PostMapping
     public ResponseEntity<TagDto> createTag(@Valid @RequestBody TagDto dto) {
         TagDto created = tagService.createTag(dto);
         return new ResponseEntity<>(created, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<TagDto> updateTag(@PathVariable Integer id, @Valid @RequestBody TagDto dto) {
+        TagDto updated = tagService.updateTag(id, dto);
+        return ResponseEntity.ok(updated);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTag(@PathVariable Integer id) {
+        tagService.deleteTag(id);
+        return ResponseEntity.noContent().build();
     }
 }
 

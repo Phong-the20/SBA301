@@ -8,6 +8,9 @@ import axiosClient from './axiosClient';
 
 export const tagApi = {
   getAll: () => axiosClient.get('/tags'),
-  create: (data) => axiosClient.post('/tags', data)
+  getById: (id) => axiosClient.get(`/tags/${id}`),
+  create: (data) => axiosClient.post('/tags', data),
+  update: (id, data) => axiosClient.put(`/tags/${id}`, data),
+  delete: (id) => axiosClient.delete(`/tags/${id}`)
 };
 

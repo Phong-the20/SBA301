@@ -11,6 +11,10 @@ import java.util.List;
 
 public interface ITagService {
     List<TagDto> getAllTags();
+    TagDto getTagById(Integer id);
     TagDto createTag(TagDto dto);
+    TagDto updateTag(Integer id, TagDto dto);
+    void deleteTag(Integer id);
 }
+
 
