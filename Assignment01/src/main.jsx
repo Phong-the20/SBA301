@@ -1,3 +1,8 @@
+/**
+ * Author: Tran The Phong
+ * Student ID: CE190157
+ * Assignment: 01 - FUNewsManagementSystem
+ */
 ﻿import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";

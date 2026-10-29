@@ -1,3 +1,8 @@
+/**
+ * Author: Tran The Phong
+ * Student ID: CE190157
+ * Assignment: 01 - FUNewsManagementSystem
+ */
 ﻿import React, { useEffect } from "react";
 
 export const ToastNotification = ({
