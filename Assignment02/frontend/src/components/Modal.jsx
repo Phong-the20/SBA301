@@ -23,3 +23,4 @@ export const Modal = ({ isOpen, title, onClose, children }) => {
     </div>
   );
 };
+

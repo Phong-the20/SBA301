@@ -22,10 +22,10 @@ public class Category {
     private Integer categoryId;
 
     @NotBlank(message = "Category name is required")
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100, columnDefinition = "NVARCHAR(100)")
     private String categoryName;
 
-    @Column(length = 250)
+    @Column(length = 250, columnDefinition = "NVARCHAR(250)")
     private String categoryDesciption;
 
     @NotNull(message = "Status is required (1: Active, 0: Inactive)")
@@ -86,3 +86,4 @@ public class Category {
         this.newsArticles = newsArticles;
     }
 }
+

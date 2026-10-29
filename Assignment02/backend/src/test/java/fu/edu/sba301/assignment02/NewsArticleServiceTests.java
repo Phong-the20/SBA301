@@ -85,3 +85,4 @@ public class NewsArticleServiceTests {
         verify(newsRepository, never()).save(any());
     }
 }
+

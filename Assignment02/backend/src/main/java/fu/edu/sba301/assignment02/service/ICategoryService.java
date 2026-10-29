@@ -18,3 +18,4 @@ public interface ICategoryService {
     void deleteCategory(Integer id);
     List<CategoryDto> searchCategories(String keyword);
 }
+

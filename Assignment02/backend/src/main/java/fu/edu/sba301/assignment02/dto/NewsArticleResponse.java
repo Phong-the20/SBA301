@@ -133,3 +133,4 @@ public class NewsArticleResponse {
         this.tags = tags;
     }
 }
+

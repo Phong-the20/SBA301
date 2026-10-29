@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
 public class AuthController {
 
     private final IAuthService authService;
@@ -30,3 +29,4 @@ public class AuthController {
         return ResponseEntity.ok(response);
     }
 }
+

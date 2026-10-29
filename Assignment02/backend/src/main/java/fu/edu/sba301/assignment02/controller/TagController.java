@@ -16,7 +16,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tags")
-@CrossOrigin(origins = "*")
 public class TagController {
 
     private final ITagService tagService;
@@ -36,3 +35,4 @@ public class TagController {
         return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
 }
+

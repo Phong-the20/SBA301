@@ -92,3 +92,4 @@ INSERT INTO NewsTag (newsArticleId, tagId) VALUES
 (3, 2),
 (3, 3);
 GO
+

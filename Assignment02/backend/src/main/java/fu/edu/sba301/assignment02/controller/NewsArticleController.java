@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/news")
-@CrossOrigin(origins = "*")
 public class NewsArticleController {
 
     private final INewsArticleService newsService;
@@ -79,3 +78,4 @@ public class NewsArticleController {
         return ResponseEntity.noContent().build();
     }
 }
+

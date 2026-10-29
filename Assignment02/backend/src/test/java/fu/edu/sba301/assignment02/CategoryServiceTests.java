@@ -77,3 +77,4 @@ public class CategoryServiceTests {
         verify(categoryRepository, times(1)).delete(sampleCategory);
     }
 }
+

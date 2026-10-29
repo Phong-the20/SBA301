@@ -11,3 +11,4 @@ export const authApi = {
     return axiosClient.post('/auth/login', { accountEmail, accountPassword });
   }
 };
+

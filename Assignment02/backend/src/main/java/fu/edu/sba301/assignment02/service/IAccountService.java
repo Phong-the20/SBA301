@@ -18,3 +18,4 @@ public interface IAccountService {
     List<AccountDto> searchAccounts(String keyword);
     AccountDto updateProfile(Integer id, AccountDto dto);
 }
+

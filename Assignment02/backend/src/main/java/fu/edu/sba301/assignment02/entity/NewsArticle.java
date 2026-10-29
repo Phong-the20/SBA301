@@ -22,10 +22,10 @@ public class NewsArticle {
     private Integer newsArticleId;
 
     @NotBlank(message = "News title is required")
-    @Column(nullable = false, length = 200)
+    @Column(nullable = false, length = 200, columnDefinition = "NVARCHAR(200)")
     private String newsTitle;
 
-    @Column(length = 250)
+    @Column(length = 250, columnDefinition = "NVARCHAR(250)")
     private String headline;
 
     @Column(nullable = false, updatable = false)
@@ -35,7 +35,7 @@ public class NewsArticle {
     @Column(columnDefinition = "NVARCHAR(MAX)")
     private String newsContent;
 
-    @Column(length = 100)
+    @Column(length = 100, columnDefinition = "NVARCHAR(100)")
     private String newsSource;
 
     @NotNull(message = "Category is required")
@@ -168,3 +168,4 @@ public class NewsArticle {
         this.tags = tags;
     }
 }
+

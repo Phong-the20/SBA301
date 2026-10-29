@@ -38,11 +38,6 @@ export const LoginPage = () => {
     }
   };
 
-  const handleQuickLogin = (quickEmail, quickPassword) => {
-    setEmail(quickEmail);
-    setPassword(quickPassword);
-  };
-
   return (
     <div className="container py-5">
       <div className="row justify-content-center">
@@ -100,29 +95,10 @@ export const LoginPage = () => {
                 {loading ? 'Đang xác thực...' : 'Đăng Nhập Ngay'}
               </button>
             </form>
-
-            <div className="mt-4 pt-3 border-top text-center">
-              <p className="text-muted small mb-2">Tài khoản demo kiểm thử nhanh:</p>
-              <div className="d-flex justify-content-center gap-2">
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline-danger"
-                  onClick={() => handleQuickLogin('admin@news.com', 'admin123')}
-                >
-                  Admin: admin@news.com
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline-primary"
-                  onClick={() => handleQuickLogin('phongtt@news.com', 'staff123')}
-                >
-                  Staff: phongtt@news.com
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
   );
 };
+

@@ -19,3 +19,4 @@ public interface SystemAccountRepository extends JpaRepository<SystemAccount, In
     boolean existsByAccountEmail(String email);
     List<SystemAccount> findByAccountNameContainingIgnoreCaseOrAccountEmailContainingIgnoreCase(String name, String email);
 }
+

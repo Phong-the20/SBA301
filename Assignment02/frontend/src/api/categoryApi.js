@@ -14,3 +14,4 @@ export const categoryApi = {
   update: (id, data) => axiosClient.put(`/categories/${id}`, data),
   delete: (id) => axiosClient.delete(`/categories/${id}`)
 };
+

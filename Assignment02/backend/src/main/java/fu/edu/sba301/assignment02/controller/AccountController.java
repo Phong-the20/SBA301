@@ -16,7 +16,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/accounts")
-@CrossOrigin(origins = "*")
 public class AccountController {
 
     private final IAccountService accountService;
@@ -62,3 +61,4 @@ public class AccountController {
         return ResponseEntity.ok(updated);
     }
 }
+

@@ -21,3 +21,4 @@ public interface NewsArticleRepository extends JpaRepository<NewsArticle, Intege
     List<NewsArticle> findByNewsTitleContainingIgnoreCaseOrHeadlineContainingIgnoreCase(String title, String headline);
     List<NewsArticle> findByNewsStatusAndNewsTitleContainingIgnoreCase(Integer status, String title);
 }
+

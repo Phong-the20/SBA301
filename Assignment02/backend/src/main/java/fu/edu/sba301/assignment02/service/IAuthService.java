@@ -12,3 +12,4 @@ import fu.edu.sba301.assignment02.dto.LoginResponse;
 public interface IAuthService {
     LoginResponse login(LoginRequest request);
 }
+

@@ -21,10 +21,10 @@ public class Tag {
     private Integer tagId;
 
     @NotBlank(message = "Tag name is required")
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100, columnDefinition = "NVARCHAR(100)")
     private String tagName;
 
-    @Column(length = 250)
+    @Column(length = 250, columnDefinition = "NVARCHAR(250)")
     private String note;
 
     @JsonIgnore
@@ -72,3 +72,4 @@ public class Tag {
         this.newsArticles = newsArticles;
     }
 }
+

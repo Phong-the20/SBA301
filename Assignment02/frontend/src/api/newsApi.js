@@ -15,3 +15,4 @@ export const newsApi = {
   update: (id, data) => axiosClient.put(`/news/${id}`, data),
   delete: (id) => axiosClient.delete(`/news/${id}`)
 };
+

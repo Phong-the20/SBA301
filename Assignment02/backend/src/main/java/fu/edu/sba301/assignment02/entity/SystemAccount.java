@@ -23,7 +23,7 @@ public class SystemAccount {
     private Integer accountId;
 
     @NotBlank(message = "Account name is required")
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100, columnDefinition = "NVARCHAR(100)")
     private String accountName;
 
     @NotBlank(message = "Account email is required")
@@ -46,7 +46,8 @@ public class SystemAccount {
     public SystemAccount() {
     }
 
-    public SystemAccount(Integer accountId, String accountName, String accountEmail, Integer accountRole, String accountPassword) {
+    public SystemAccount(Integer accountId, String accountName, String accountEmail, Integer accountRole,
+            String accountPassword) {
         this.accountId = accountId;
         this.accountName = accountName;
         this.accountEmail = accountEmail;

@@ -20,3 +20,4 @@ public interface INewsArticleService {
     void deleteNews(Integer id);
     List<NewsArticleResponse> searchNews(String keyword, boolean activeOnly);
 }
+

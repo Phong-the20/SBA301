@@ -14,3 +14,4 @@ export const accountApi = {
   delete: (id) => axiosClient.delete(`/accounts/${id}`),
   updateProfile: (id, data) => axiosClient.put(`/accounts/profile/${id}`, data)
 };
+

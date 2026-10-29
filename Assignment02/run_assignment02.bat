@@ -24,3 +24,4 @@ echo Tai khoan Admin        : admin@news.com / admin123
 echo Tai khoan Staff        : phongtt@news.com / staff123
 echo ======================================================================
 pause
+
