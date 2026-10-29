@@ -28,3 +28,4 @@ UPDATE news_article SET
     news_content = N'Hàng ngàn tân sinh viên tham gia ngày hội định hướng và các hoạt động sôi nổi...'
 WHERE news_article_id = 3;
 GO
+

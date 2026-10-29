@@ -178,7 +178,7 @@ public class NewsArticleService implements INewsArticleService {
         String clean = keyword.trim();
         List<NewsArticle> list;
         if (activeOnly) {
-            list = newsRepository.findByNewsStatusAndNewsTitleContainingIgnoreCase(1, clean);
+            list = newsRepository.searchByStatusAndKeyword(1, clean);
         } else {
             list = newsRepository.findByNewsTitleContainingIgnoreCaseOrHeadlineContainingIgnoreCase(clean, clean);
         }

@@ -37,9 +37,15 @@ export const HomePage = () => {
     fetchData();
   }, [keyword]);
 
-  const filteredNews = selectedCategory
-    ? newsList.filter((item) => item.categoryId === selectedCategory)
-    : newsList;
+  const filteredNews = newsList
+    .filter((item) => (selectedCategory ? item.categoryId === selectedCategory : true))
+    .filter((item) => {
+      if (!keyword || !keyword.trim()) return true;
+      const kw = keyword.trim().toLowerCase();
+      const titleMatch = item.newsTitle?.toLowerCase().includes(kw);
+      const headlineMatch = item.headline?.toLowerCase().includes(kw);
+      return titleMatch || headlineMatch;
+    });
 
   return (
     <div className="container py-4">

@@ -40,7 +40,12 @@ public class NewsArticleController {
     }
 
     @GetMapping("/public")
-    public ResponseEntity<List<NewsArticleResponse>> getPublicActiveNews() {
+    public ResponseEntity<List<NewsArticleResponse>> getPublicActiveNews(
+        @RequestParam(required = false) String keyword
+    ) {
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            return ResponseEntity.ok(newsService.searchNews(keyword, true));
+        }
         return ResponseEntity.ok(newsService.getActiveNews());
     }
 
