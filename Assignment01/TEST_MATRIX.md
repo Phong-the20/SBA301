@@ -1,4 +1,4 @@
-﻿# BẢNG MA TRẬN KIỂM THỬ BẮT BUỘC (MANDATORY TEST MATRIX)
+# BẢNG MA TRẬN KIỂM THỬ BẮT BUỘC (MANDATORY TEST MATRIX)
 ### FUNewsManagementSystem • SBA301 Assignment 01
 
 | # | Nhóm kiểm thử | Trường hợp (Case) | Thao tác thực hiện | Kết quả mong đợi | Kết quả thực tế (Actual / Pass) |

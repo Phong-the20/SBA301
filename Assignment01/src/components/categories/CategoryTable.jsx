@@ -3,7 +3,7 @@
  * Student ID: CE190157
  * Assignment: 01 - FUNewsManagementSystem
  */
-﻿import React from "react";
+import React from "react";
 
 export const CategoryTable = ({
   categories,

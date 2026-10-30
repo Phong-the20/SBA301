@@ -3,7 +3,7 @@
  * Student ID: CE190157
  * Assignment: 01 - FUNewsManagementSystem
  */
-﻿export const INITIAL_CATEGORIES = [
+export const INITIAL_CATEGORIES = [
   {
     id: 1,
     name: "Công nghệ số & Trí tuệ nhân tạo",

@@ -3,7 +3,7 @@
  * Student ID: CE190157
  * Assignment: 01 - FUNewsManagementSystem
  */
-﻿import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 
 export const ToastNotification = ({
   toast, // { show, type: 'success'|'danger'|'info'|'warning', message, title }

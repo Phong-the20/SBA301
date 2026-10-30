@@ -3,7 +3,7 @@
  * Student ID: CE190157
  * Assignment: 01 - FUNewsManagementSystem
  */
-﻿export const INITIAL_NEWS = [
+export const INITIAL_NEWS = [
   {
     id: 1,
     title: "Đại học FPT công bố chương trình đào tạo tích hợp AI mới nhất 2026",

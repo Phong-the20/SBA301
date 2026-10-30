@@ -3,7 +3,7 @@
  * Student ID: CE190157
  * Assignment: 01 - FUNewsManagementSystem
  */
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { storageService } from "../services/storageService";
 import { useAuth } from "../context/AuthContext";

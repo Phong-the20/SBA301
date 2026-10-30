@@ -1,4 +1,4 @@
-﻿# TÀI LIỆU ÔN TẬP VÀ TRẢ LỜI PHỎNG VẤN (INTERVIEW DEFENSE GUIDE)
+# TÀI LIỆU ÔN TẬP VÀ TRẢ LỜI PHỎNG VẤN (INTERVIEW DEFENSE GUIDE)
 ### SBA301 • Assignment 01 • Working with ReactJS Application
 
 Tài liệu này được biên soạn bám sát **Mục 7 và Mục 12** trong file Hướng dẫn Sinh viên thực hiện Assignment 01, giúp sinh viên tự tin đạt điểm tối đa (10.0 / 10.0) trong phần bảo vệ và phỏng vấn trực tiếp với Giảng viên.

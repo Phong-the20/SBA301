@@ -3,7 +3,7 @@
  * Student ID: CE190157
  * Assignment: 01 - FUNewsManagementSystem
  */
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { newsService } from "../services/newsService";
 import { categoryService } from "../services/categoryService";
 import { useAuth } from "../context/AuthContext";

@@ -1,4 +1,4 @@
-﻿# SBA301 - ASSIGNMENT 01: FUNewsManagementSystem
+# SBA301 - ASSIGNMENT 01: FUNewsManagementSystem
 
 > **Học phần:** SBA301 – Integrate Single Page Application with Spring Boot  
 > **Sinh viên thực hiện:** Phong-the20 (PhongTT - CE190157)  
